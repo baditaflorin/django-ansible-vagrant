@@ -1,0 +1,7 @@
+---
+
+influxdb_name: "{{ db_name }}"
+influxdb_user: "{{ db_user }}"
+influxdb_password: "{{ db_password }}"
+influxdb_admin_user: "{{ db_user }}_admin"
+influxdb_admin_password: "{{ db_password }}"

@@ -87,3 +87,11 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Vagranat
+.vagrant/*
+
+# Ansible
+ansible/*.retry
+ansible/ansible.cfg
+

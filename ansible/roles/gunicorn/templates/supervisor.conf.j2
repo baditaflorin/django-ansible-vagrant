@@ -1,0 +1,10 @@
+[program:{{ application_name|lower }}-gunicorn]
+directory={{ application_path }}
+user={{ application_user }}
+command={{ virtualenv_path }}/bin/gunicorn-start
+stdout_logfile={{ application_log_dir }}/gunicorn.log
+stderr_logfile={{ application_log_dir }}/gunicorn.err
+stdout_logfile_maxbytes=10MB
+stderr_logfile_maxbytes=10MB
+autostart=true
+autorestart=true

@@ -1,0 +1,19 @@
+---
+
+- name: Create a Vagrant VM
+  hosts: all
+  become: yes
+  become_method: sudo
+  remote_user: vagrant
+  vars:
+    - application_name: changeme
+  vars_files:
+    - env_vars/vagrant.yml
+  roles:
+    - base
+    - postgresql
+    #- influxdb
+    - virtualenv
+    #- gunicorn
+    - nginx
+    #- selenium
