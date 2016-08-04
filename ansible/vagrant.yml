@@ -11,7 +11,8 @@
     - env_vars/vagrant.yml
   roles:
     - base
-    - postgresql
+    # - postgresql
+    - mysql
     #- influxdb
     - virtualenv
     #- gunicorn
