@@ -6,8 +6,6 @@
     state: installed
     force: yes 
   with_items:
-    - libpq-dev
-    - postgresql-client
     - python3-dev
     - python3-pip
     - python3-pycurl
@@ -74,5 +72,5 @@
         state=directory
 #        mode=0774
 
-#- name: Update the project directory.
-#  file: group={{ application_user }} owner={{ application_user }} mode=755 state=directory path={{ virtualenv_path }}
+- name: Update the project directory
+  file: group={{ application_user }} owner={{ application_user }} mode="a+rX" state=directory path={{ virtualenv_path }} recurse=true

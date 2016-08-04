@@ -6,6 +6,8 @@
     - postgresql
     - postgresql-contrib
     - python-psycopg2
+    - libpq-dev
+    - postgresql-client
   tags: packages
 
 - name: Ensure the PostgreSQL service is running
