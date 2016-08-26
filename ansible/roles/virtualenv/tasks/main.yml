@@ -25,7 +25,7 @@
            creates={{ virtualenv_path }}/bin/activate
 
 - name: Install requirements.txt
-  pip:  virtualenv={{ virtualenv_path }} requirements={{ requirements_file }} executable=pip3
+  pip:  virtualenv={{ virtualenv_path }} requirements={{ requirements_file }} #executable=pip3
 
 - name: Create the application log folder
   file: path={{ application_log_dir }}
