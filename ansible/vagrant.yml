@@ -1,6 +1,7 @@
 ---
 
 - name: Create a Vagrant VM
+  #gather_facts: False
   hosts: all
   become: yes
   become_method: sudo
@@ -11,10 +12,10 @@
     - env_vars/vagrant.yml
   roles:
     - base
-    # - postgresql
-    - mysql
     #- influxdb
+    # - postgresql
     - virtualenv
+    - mysql
     #- gunicorn
     - nginx
     #- selenium
