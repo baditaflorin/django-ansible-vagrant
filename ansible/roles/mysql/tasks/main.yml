@@ -4,7 +4,7 @@
   apt: name={{ item }} state=installed
   with_items:
     - mysql-server
-    - python-mysqldb
+    - libmysqlclient-dev
   tags: packages
 
 - name: Ensure the MySQL service is running
@@ -15,3 +15,7 @@
 
 - name: Ensure user has access to the database
   mysql_user: name={{ db_user }} password={{ db_password }} priv='{{ db_name }}.*:ALL' state=present
+
+- name: Install mysqlclient for Python
+  pip: virtualenv={{ virtualenv_path }} name=mysqlclient state=latest
+  tags: packages
