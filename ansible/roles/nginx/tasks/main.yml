@@ -4,7 +4,7 @@
   apt_key: keyserver=keyserver.ubuntu.com id=7BD9BF62 state=present
 
 - name: "Add Nginx repository"
-  apt_repository: repo='deb http://nginx.org/packages/mainline/ubuntu/ {{ ansible_distribution_release|lower }} nginx' state=present
+  apt_repository: repo='deb http://nginx.org/packages/mainline/ubuntu/ {{ ubuntu_release|lower }} nginx' state=present
 
 - name: Install Nginx
   apt: name=nginx update_cache=yes state=installed
