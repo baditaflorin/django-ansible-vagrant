@@ -2,6 +2,8 @@
 
 default_locale: en_US.UTF-8
 
+ubuntu_release: trusty
+
 # Application settings.
 virtualenv_path: "/home/vagrant/{{ application_name }}"
 
