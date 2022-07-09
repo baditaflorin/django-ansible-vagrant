@@ -25,14 +25,17 @@
   command: virtualenv {{ virtualenv_path }} --python=python3 
            creates={{ virtualenv_path }}/bin/activate
 
-- name: Install multi python packages with version specifiers
-  ansible.builtin.pip:
-    virtualenv: {{ virtualenv_path }}
-    name:
-      - django=4.0.60
-      - PyYAML6.0
+#- name: Install multi python packages with version specifiers
+#  ansible.builtin.pip:
+#    name:
+#      - django=4.0.60
+#      - PyYAML6.0
 
+- name: Install Django 4
+    pip: name=django version=4.0.60 state=present
 
+- name: Install PyYAML 6
+    pip: name=PyYAML version=6.0 state=present
 
 #- name: Install requirements.txt
 #  pip:  virtualenv={{ virtualenv_path }} requirements={{ requirements_file }} #executable=pip3
