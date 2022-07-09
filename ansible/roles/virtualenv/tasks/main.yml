@@ -1,14 +1,18 @@
 ---
 
+- name: Add Python stable repository from PPA and install its signing key on Ubuntu target
+  ansible.builtin.apt_repository:
+    repo: ppa:deadsnakes/ppa/
+
 - name: Install Python packages
   apt:
     name: "{{ item }}"
     state: present
     force: yes 
   with_items:
-    - python3-dev
-    - python3-pip
-    - python3-pycurl
+    - python3.9-dev
+    - python3.9-pip
+    - python3.9-pycurl
     - supervisor
   tags: packages
 
