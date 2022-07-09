@@ -3,7 +3,7 @@
 - name: Install Python packages
   apt:
     name: "{{ item }}"
-    state: installed
+    state: present
     force: yes 
   with_items:
     - python3-dev

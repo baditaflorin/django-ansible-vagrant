@@ -7,7 +7,7 @@
   apt_repository: repo='deb http://nginx.org/packages/mainline/ubuntu/ {{ ubuntu_release|lower }} nginx' state=present
 
 - name: Install Nginx
-  apt: name=nginx update_cache=yes state=installed
+  apt: name=nginx update_cache=yes state=present
   tags: packages
 
 - name: Create the Nginx configuration file
