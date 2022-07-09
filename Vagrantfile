@@ -8,7 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
   config.ssh.forward_agent = true
   config.ssh.insert_key = false
-  config.vm.network :private_network, ip: "192.168.4.23"
+  config.vm.network :public_network, ip: "192.168.86.233"
   config.vm.provider :virtualbox do |vb|
     host = RbConfig::CONFIG['host_os']
     if host =~ /darwin/
