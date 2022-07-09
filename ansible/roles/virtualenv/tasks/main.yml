@@ -31,11 +31,17 @@
 #      - django=4.0.60
 #      - PyYAML6.0
 
-- name: Install Django 4
-    pip: name=django version=4.0.60 state=present
+#- name: Install Django 4
+- pip: 
+    name: django 
+    version: 4.0.6
+    state: present
 
-- name: Install PyYAML 6
-    pip: name=PyYAML version=6.0 state=present
+#- name: Install PyYAML 6
+- pip: 
+    name: PyYAML
+    version: 6.0
+    state: present
 
 #- name: Install requirements.txt
 #  pip:  virtualenv={{ virtualenv_path }} requirements={{ requirements_file }} #executable=pip3
