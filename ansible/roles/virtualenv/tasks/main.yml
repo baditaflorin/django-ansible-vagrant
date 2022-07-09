@@ -25,8 +25,17 @@
   command: virtualenv {{ virtualenv_path }} --python=python3 
            creates={{ virtualenv_path }}/bin/activate
 
-- name: Install requirements.txt
-  pip:  virtualenv={{ virtualenv_path }} requirements={{ requirements_file }} #executable=pip3
+- name: Install multi python packages with version specifiers
+  ansible.builtin.pip:
+    virtualenv: {{ virtualenv_path }}
+    name:
+      - django=4.0.60
+      - PyYAML6.0
+
+
+
+#- name: Install requirements.txt
+#  pip:  virtualenv={{ virtualenv_path }} requirements={{ requirements_file }} #executable=pip3
 
 - name: Create the application log folder
   file: path={{ application_log_dir }}
