@@ -46,4 +46,4 @@
 
 - name: Update motd
   command: 'run-parts /etc/update-motd.d/'
-  when: motd_removed|changed
+  when: motd_removed is changed
